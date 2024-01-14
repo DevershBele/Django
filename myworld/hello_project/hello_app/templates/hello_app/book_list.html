@@ -1,0 +1,19 @@
+<!-- hello_app/templates/hello_app/author_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author List</title>
+</head>
+<body>
+    <h2>Authors and Books</h2>
+
+    {% for author in authors %}
+        <h3>{{ author.name }}</h3>
+        <ul>
+            {% for book in author.book_set.all %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
